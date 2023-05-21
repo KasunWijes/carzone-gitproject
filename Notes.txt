@@ -1,0 +1,22 @@
+pip freeze// check gloabal environment installed packages
+pip install --user virtualenv  //sudo access
+
+$ python -m venv env //python virtual environment comeup with new vewrsion and it is just called
+source env/Scripts/activate // activate the virula environment where no longer connection wit global environment packages
+
+pip freeze //no packages installed listed in new virual directory
+
+*******************
+pip install django==3.0.7
+
+************
+django-admin startproject . //create carzone project file, main folder + manage.py file
+
+$ python manage.py runserver //run the server amd local host browser
+
+***********************
+as soon as create an app , please add it under installed apps in settings.py
+
+===================
+catzone folder ,modification to project
+pages folder , modification to rest default html page
