@@ -1,7 +1,7 @@
 pip freeze// check gloabal environment installed packages
 pip install --user virtualenv  //sudo access
 
-$ python -m venv env //python virtual environment comeup with new vewrsion and it is just called
+python -m venv env //python virtual environment comeup with new vewrsion and it is just called
 source env/Scripts/activate // activate the virula environment where no longer connection wit global environment packages
 
 pip freeze //no packages installed listed in new virual directory
@@ -12,7 +12,16 @@ pip install django==3.0.7
 ************
 django-admin startproject . //create carzone project file, main folder + manage.py file
 
-$ python manage.py runserver //run the server amd local host browser
++++++++++++++++++++++++++++++++++++++++++++++++++
+Start server on browser
+
+//go to relevent project folder from bash
+
+source env/Scripts/activate
+python manage.py runserver //run the server amd local host browser
+
+
+Search on browser: http://127.0.0.1:8000/
 
 ***********************
 as soon as create an app , please add it under installed apps in settings.py
@@ -20,3 +29,40 @@ as soon as create an app , please add it under installed apps in settings.py
 ===================
 catzone folder ,modification to project
 pages folder , modification to rest default html page
+
+======================
+#push to github
+
+git init #run on git bash after activated virtual env, git folder will create on Atom
+git add -A #ADD ALL the files to git bash
+
+
+=========================
+
+git status           #only shows the changes in exiting folders,new files are not tracking
+git add -A             # add all newly created files to gitHub
+git commit -am "added new test file to pages folder"       #update the commit in gitHub
+git status                #now can show the changes of newly created file
+
+==========================
+git ignore files
+
+contains the media files , pictures does not add to github since size is high. 
+
+/media  #does not track by git status comd
+
+
+
+===================================================================================
+
+in Django , all css,image and js files/links are called as static files
+
+1. Paste static file folder innside working project folder
+2. Register the static files in settings.py to add the path route
+3. Run manage.py collectstatic command to collect all static files from working dir and copy them the rest api folder(Rest api creating as similar folder it self according to working folder)
+
+
+==============================
+Do css , js and images href changes as =>> "{%static 'xx' %}"  //path reestablishing acccording to static folder
+
+ctrl+f5  clear the cash memory on browser then load
