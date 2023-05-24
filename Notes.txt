@@ -31,13 +31,18 @@ catzone folder ,modification to project
 pages folder , modification to rest default html page
 
 ======================
-#push to github
+#push to github initially
 
 git init #run on git bash after activated virtual env, git folder will create on Atom
 git add -A #ADD ALL the files to git bash
 
 
-=========================
+======== Tegular push ups to Github===============
+git add .
+git commit -am "added new test file to pages folder"       #update the commit in gitHub
+git push origin
+
+====================================================
 
 git status           #only shows the changes in exiting folders,new files are not tracking
 git add -A             # add all newly created files to gitHub
