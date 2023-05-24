@@ -10,7 +10,7 @@ pip freeze //no packages installed listed in new virual directory
 pip install django==3.0.7
 
 ************
-django-admin startproject . //create carzone project file, main folder + manage.py file
+django-admin startproject . //create carzone project file/create Django app, main folder + manage.py file
 
 +++++++++++++++++++++++++++++++++++++++++++++++++
 Start server on browser
@@ -42,6 +42,7 @@ git add -A #ADD ALL the files to git bash
 git status           #only shows the changes in exiting folders,new files are not tracking
 git add -A             # add all newly created files to gitHub
 git commit -am "added new test file to pages folder"       #update the commit in gitHub
+git push origin
 git status                #now can show the changes of newly created file
 
 ==========================
@@ -66,3 +67,70 @@ in Django , all css,image and js files/links are called as static files
 Do css , js and images href changes as =>> "{%static 'xx' %}"  //path reestablishing acccording to static folder
 
 ctrl+f5  clear the cash memory on browser then load
+======================================================
+find below {% _________ %} are template tags.
+
+creating abse.html file
+
+{% extends 'base.html'%}
+
+{% block content%}
+
+{% load static %}
+
+{% endblock %}
+
+==========================
+
+breaking html template into 3 parts
+1.Top bar
+2.Nav bar
+3.Footer
+
+inside base file
+
+{% include 'includes/topbar.html' %}
+
+{% include 'includes/navbar.html' %}
+
+  <!-- main or home content start -->
+{% block content%}
+
+{% endblock %}
+  <!-- main or home content end -->
+  
+{% include 'includes/footer.html' %}
+
+
+
+==============================================================================================
+if you need to add a navigation page to main page
+
+1. update django app folder urls.py >> url patterns
+
+path('about', views.about, name='about'),  #views.method name is about
+
+
+2. Create method in views.py in django app folder
+
+def about(request): #pass a request to the method
+    return render(request, 'pages/about.html') #pass again request and about.html path to render method
+
+3.Create a new file in template/app/about.html and update your html tags. 
+
+noe you can route to the naviagtion page
+
+========================================================================================
+
+pages app.  What do you mean by app? 
+example:
+
+1. Account app for login and register
+2. Pages app for navigation to pages
+
+================================================
+Key Terminology
+
+1. Banner - header ekat yatin yana ribon eka
+2. Bread Crumb- Banner eke tiyena nawatha home ekat yana button eka
+3. Overlay = prompting the relevent widjet
