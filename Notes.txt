@@ -193,3 +193,23 @@ CREATE TABLE myapp_person (
 
 =========================================================================================================
 
+How to register a modal?
+
+1. Create a model by its name as a class in models.py
+2. Register the model at admin.py through register method
+3. then run make migrations : it will create 0001_initial.py file and ready to transfer the modal to database
+3. run migrate command to transfer the modal class to data base table colomns
+
+
+=============================================================================================================
+
+Handling media files // all the media files are saved in media folder in the projects
+
+1.update media.settings in settings.py ===== root and url
+2.update urls.py
+
+=========================================================
+
+Fetch data into home page
+
+

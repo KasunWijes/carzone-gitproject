@@ -1,12 +1,21 @@
 from django.shortcuts import render
+from .models import Team
 
 # Create your views here.
 def home(request):
-    return render(request,'pages/home.html')
+    teams = Team.objects.all()  #models.object all vlaues
+    data = {
+     'teams' :teams,
+    }
+    return render(request,'pages/home.html', data)  #pass the data into home page
 
 
 def about(request): #pass a request to the method
-    return render(request, 'pages/about.html') #pass again request and about.html path to render method to url folder
+    teams = Team.objects.all()
+    data = {
+        'teams' :teams,
+    }
+    return render(request, 'pages/about.html', data) #pass again request and about.html path to render method to url folder
 
 def services(request):
     return render(request, 'pages/services.html')
